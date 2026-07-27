@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    
+    height: 100vh;
 }
 
 nav button {
@@ -35,23 +35,35 @@ nav button {
     align-items: center;
 }
 
+nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
 .logo {
     background-color: #fff;
     color: hsl(288, 37%, 59%);
-    padding: 8px 16px;
-    border-radius: 40px;
-    width: 40px;
-    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .conteudo {
-    margin: 260px auto;
+    flex: 1;
     padding: 28px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
+    overflow-y: auto;
+    width: 100%;
 }
 
 .conteudo p {
@@ -62,10 +74,11 @@ nav button {
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    max-width: 900px;
 }
 
 .card {
@@ -95,11 +108,44 @@ nav button {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .relative{
     position: relative;
     top: -180px;
     right: -230px;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
